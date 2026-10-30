@@ -23,4 +23,10 @@ jobs:
         pip install -r requirements-dev.txt
     - name: Test with pytest
       run: |
-        python -m pytest -q
+        python -m pytest -q --junitxml=reports/junit.xml
+    - name: Upload test report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: pytest-report
+        path: reports/junit.xml
