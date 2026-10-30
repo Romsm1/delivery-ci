@@ -8,7 +8,7 @@
 
     if subtotal < 1000:
         cost = 300
-    elif 1000 <= subtotal < 5000:
+    elif 1000 <= subtotal <= 5000:
         cost = 150
     else:
         cost = 0
